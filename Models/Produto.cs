@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Catalogo_API.Models;
 [Table("Produtos")]
@@ -32,5 +33,7 @@ public class Produto
 
     //Chave estrangeira para as categorias dos produtos
     public int CategoriaId { get; set; } //FK
+
+    [JsonIgnore]
     public Categoria? Categoria { get; set; }
 }

@@ -21,24 +21,40 @@ namespace Catalogo_API.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<Produto>> Get()
         {
-            var produtos = _context.Produtos.ToList();
+            try
+            {
+                var produtos = _context.Produtos.ToList();
 
-            if (produtos == null)
-                return NotFound("Produtos não encontrados!");
+                if (produtos == null)
+                    return NotFound("Produtos não encontrados!");
 
-            return produtos;
+                return produtos;
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                                    "Ocorreu um erro ao processar a requisição, por favor tente novamente mais tarde.");
+            }
         }
 
         //Get filtrado pelo ID do item
         [HttpGet("{id:int}", Name ="ObterProduto")]
         public ActionResult<Produto> Get(int id)
         {
-            var produtos = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+            try
+            {
+                var produtos = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
 
-            if (produtos == null)
-                return NotFound("Produto não existe!");
+                if (produtos == null)
+                    return NotFound("Produto não existe!");
 
-            return produtos;
+                return produtos;
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                                    "Ocorreu um erro ao processar a requisição, por favor tente novamente mais tarde.");
+            }
         }
 
         //Post comum
@@ -46,7 +62,7 @@ namespace Catalogo_API.Controllers
         public ActionResult Post([FromBody] Produto produto)
         {
             if (produto == null)
-                return BadRequest();
+                return BadRequest("Erro ao cadastrar item: Requisição não possue corpo!");
 
             _context.Produtos.Add(produto);
             _context.SaveChanges();
@@ -61,7 +77,7 @@ namespace Catalogo_API.Controllers
         public ActionResult Put(int id, Produto produto)
         {
             if (id != produto.ProdutoId)
-                return BadRequest();
+                return BadRequest($"Erro ao atualizar item: ID do item diverge. \nID informado: {id} \nID dado na requisição: {produto.ProdutoId}");
 
             _context.Entry(produto).State = EntityState.Modified;
             _context.SaveChanges();
@@ -76,7 +92,7 @@ namespace Catalogo_API.Controllers
             var produto = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
 
             if (produto == null)
-                return NotFound("Produto não encontrado.");
+                return NotFound($"Produto de ID {id} não foi encontrado ou já foi deletado.");
 
             _context.Produtos.Remove(produto);
             _context.SaveChanges();
