@@ -19,16 +19,16 @@ namespace Catalogo_API.Controllers
 
         //Get comum
         [HttpGet]
-        public ActionResult<IEnumerable<Produto>> Get()
+        public async Task<ActionResult<IEnumerable<Produto>>> Get()
         {
             try
             {
-                var produtos = _context.Produtos.ToList();
+                var produtos = await _context.Produtos.AsNoTracking().ToListAsync();
 
-                if (produtos == null)
+                if (!produtos.Any())
                     return NotFound("Produtos não encontrados!");
 
-                return produtos;
+                return Ok(produtos);
             }
             catch (Exception)
             {
@@ -38,17 +38,17 @@ namespace Catalogo_API.Controllers
         }
 
         //Get filtrado pelo ID do item
-        [HttpGet("{id:int}", Name ="ObterProduto")]
-        public ActionResult<Produto> Get(int id)
+        [HttpGet("{id:int:min(1)}", Name ="ObterProduto")]
+        public async Task<ActionResult<Produto>> Get(int id)
         {
             try
             {
-                var produtos = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+                var produtos = await _context.Produtos.AsNoTracking().FirstOrDefaultAsync(p => p.ProdutoId == id);
 
                 if (produtos == null)
                     return NotFound("Produto não existe!");
 
-                return produtos;
+                return Ok(produtos);
             }
             catch (Exception)
             {
@@ -59,13 +59,13 @@ namespace Catalogo_API.Controllers
 
         //Post comum
         [HttpPost]
-        public ActionResult Post([FromBody] Produto produto)
+        public async Task<ActionResult> Post([FromBody] Produto produto)
         {
             if (produto == null)
                 return BadRequest("Erro ao cadastrar item: Requisição não possue corpo!");
 
             _context.Produtos.Add(produto);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return new CreatedAtRouteResult("ObterProduto",
                                              new { id = produto.ProdutoId },
@@ -73,29 +73,34 @@ namespace Catalogo_API.Controllers
         }
 
         //Put comum
-        [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Produto produto)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Put(int id, Produto produto)
         {
             if (id != produto.ProdutoId)
                 return BadRequest($"Erro ao atualizar item: ID do item diverge. \nID informado: {id} \nID dado na requisição: {produto.ProdutoId}");
 
+            var existe = await _context.Produtos.AnyAsync(c => c.ProdutoId == id);
+
+            if (!existe)
+                return NotFound("Não foi possível encontrar essa requisição. O ID informado não obteve éxito na pesquisa do item");
+
             _context.Entry(produto).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok(produto);
         }
 
         //Hard Delete comum
-        [HttpDelete("{id:int}")]
-        public ActionResult Delete(int id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            var produto = _context.Produtos.FirstOrDefault(p => p.ProdutoId == id);
+            var produto = await _context.Produtos.FirstOrDefaultAsync(p => p.ProdutoId == id);
 
             if (produto == null)
                 return NotFound($"Produto de ID {id} não foi encontrado ou já foi deletado.");
 
             _context.Produtos.Remove(produto);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok(produto);
         }

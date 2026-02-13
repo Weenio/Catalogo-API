@@ -19,16 +19,16 @@ namespace Catalogo_API.Controllers
 
         //Get comum
         [HttpGet]
-        public ActionResult<IEnumerable<Categoria>> Get()
+        public async Task<ActionResult<IEnumerable<Categoria>>> Get()
         {
             try
             {
-                var categoria = _context.Categorias.AsNoTracking().ToList();
+                var categoria = await _context.Categorias.AsNoTracking().ToListAsync();
 
-                if (categoria == null)
+                if (!categoria.Any())
                     return NotFound("Categorias não encontradas!");
 
-                return categoria;
+                return Ok(categoria);
             }
             catch (Exception)
             {
@@ -38,17 +38,17 @@ namespace Catalogo_API.Controllers
         }
 
         //Get filtrado pelo ID do item
-        [HttpGet("{id:int}", Name = "ObterCategorias")]
-        public ActionResult<Categoria> Get(int id)
+        [HttpGet("{id:int:min(1)}", Name = "ObterCategorias")]
+        public async Task<ActionResult<Categoria>> Get(int id)
         {
             try
             {
-                var categoria = _context.Categorias.AsNoTracking().FirstOrDefault(p => p.CategoriaId == id);
+                var categoria = await _context.Categorias.AsNoTracking().FirstOrDefaultAsync(p => p.CategoriaId == id);
 
                 if (categoria == null)
                     return NotFound("Categoria não existe!");
 
-                return categoria;
+                return Ok(categoria);
             }
             catch (Exception)
             {
@@ -59,11 +59,11 @@ namespace Catalogo_API.Controllers
 
         //Get listando Categorias junto dos produtos
         [HttpGet("produtos")]
-        public ActionResult<IEnumerable<Categoria>> GetCategoriaProdutos()
+        public async Task<ActionResult<IEnumerable<Categoria>>> GetCategoriaProdutos()
         {
             try
             {
-                return _context.Categorias.Include(p => p.Produtos).ToList();
+                return await _context.Categorias.AsNoTracking().Include(p => p.Produtos).ToListAsync();
             }
             catch (Exception)
             {
@@ -74,13 +74,13 @@ namespace Catalogo_API.Controllers
 
         //Post comum
         [HttpPost]
-        public ActionResult Post([FromBody] Categoria categoria)
+        public async Task<ActionResult> Post([FromBody] Categoria categoria)
         {
             if (categoria == null)
                 return BadRequest("Erro ao cadastrar item: Requisição não possue corpo!");
 
             _context.Categorias.Add(categoria);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return new CreatedAtRouteResult("ObterCategorias",
                                              new { id = categoria.CategoriaId },
@@ -88,29 +88,34 @@ namespace Catalogo_API.Controllers
         }
 
         //Put comum
-        [HttpPut("{id:int}")]
-        public ActionResult Put(int id, Categoria categoria)
+        [HttpPut("{id:int:min(1)}")]
+        public async Task<ActionResult> Put(int id, Categoria categoria)
         {
             if (id != categoria.CategoriaId)
                 return BadRequest($"Erro ao atualizar item: ID do item diverge. \nID informado: {id} \nID dado na requisição: {categoria.CategoriaId}");
 
+            var existe = await _context.Categorias.AnyAsync(c => c.CategoriaId == id);
+
+            if (!existe)
+                return NotFound("Não foi possível encontrar essa requisição. O ID informado não obteve éxito na pesquisa do item");
+
             _context.Entry(categoria).State = EntityState.Modified;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok(categoria);
         }
 
         //Hard Delete comum
-        [HttpDelete("{id:int}")]
-        public ActionResult Delete(int id)
+        [HttpDelete("{id:int:min(1)}")]
+        public async Task<ActionResult> Delete(int id)
         {
-            var categoria = _context.Categorias.FirstOrDefault(p => p.CategoriaId == id);
+            var categoria = await _context.Categorias.FirstOrDefaultAsync(p => p.CategoriaId == id);
 
             if (categoria == null)
                 return NotFound($"Categoria de ID {id} não foi encontrado ou já foi deletado.");
 
             _context.Categorias.Remove(categoria);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
             return Ok(categoria);
         }
