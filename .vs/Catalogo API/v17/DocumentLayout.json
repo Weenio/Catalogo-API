@@ -7,28 +7,16 @@
       "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\filters\\produtofilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:filters\\produtofilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:models\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|d:\\usuarios\\guilherme\\trabalhos\\api asp.net restful (curso)\\apis\\catalogo api\\catalogo api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{60D4670A-C7C6-40FF-8F33-1A9200DF1B47}|Catalogo API.csproj|solutionrelative:catalogo api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -48,7 +36,7 @@
               "RelativeDocumentMoniker": "Controllers\\ProdutoController.cs",
               "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Controllers\\ProdutoController.cs",
               "RelativeToolTip": "Controllers\\ProdutoController.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAA0wGAAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAowC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-01-28T21:06:29.175Z",
               "IsPinned": true,
@@ -56,13 +44,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CategoriaController.cs",
               "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Controllers\\CategoriaController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoriaController.cs",
               "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Controllers\\CategoriaController.cs",
               "RelativeToolTip": "Controllers\\CategoriaController.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAcwGMAAACAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-03T19:03:33.279Z",
               "IsPinned": true,
@@ -74,64 +62,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T23:46:03.203Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "Produto.cs",
               "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Models\\Produto.cs",
               "RelativeDocumentMoniker": "Models\\Produto.cs",
               "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Models\\Produto.cs",
               "RelativeToolTip": "Models\\Produto.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAgwCQAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T23:20:49.583Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Context\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Context\\AppDbContext.cs",
-              "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Context\\AppDbContext.cs",
-              "RelativeToolTip": "Context\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T23:38:40.943Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Models\\Categoria.cs",
-              "RelativeDocumentMoniker": "Models\\Categoria.cs",
-              "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Models\\Categoria.cs",
-              "RelativeToolTip": "Models\\Categoria.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-26T23:18:13.659Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Catalogo API.csproj",
-              "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Catalogo API.csproj",
-              "RelativeDocumentMoniker": "Catalogo API.csproj",
-              "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Catalogo API.csproj",
-              "RelativeToolTip": "Catalogo API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-01-26T23:34:18.938Z"
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-09T21:41:29.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProdutoFilter.cs",
+              "DocumentMoniker": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Filters\\ProdutoFilter.cs",
+              "RelativeDocumentMoniker": "Filters\\ProdutoFilter.cs",
+              "ToolTip": "D:\\Usuarios\\Guilherme\\Trabalhos\\API ASP.NET RESTful (curso)\\APIs\\Catalogo API\\Filters\\ProdutoFilter.cs",
+              "RelativeToolTip": "Filters\\ProdutoFilter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-09T21:40:55.631Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -1,4 +1,5 @@
 ﻿using Catalogo_API.Context;
+using Catalogo_API.Filters;
 using Catalogo_API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -19,16 +20,40 @@ namespace Catalogo_API.Controllers
 
         //Get comum
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Produto>>> Get()
+        public async Task<ActionResult<IEnumerable<Produto>>> Get([FromQuery] ProdutoFilter produtoFilter)
         {
             try
             {
-                var produtos = await _context.Produtos.AsNoTracking().ToListAsync();
+                var produtos = _context.Produtos.AsNoTracking();
+
+                //Inicio dos filtros para a pesquisa básica
+
+                //Filtro por nome
+                if (produtoFilter.Nome != null)
+                {
+                    produtos = produtos.Where(p => p.NomeProduto == produtoFilter.Nome);
+                }
+
+                //Filtro por valor minimo
+                if (produtoFilter.PrecoMin.HasValue)
+                {
+                    produtos = produtos.Where(p => p.Preco >= produtoFilter.PrecoMin.Value);
+                }
+
+                //Filtro por valor máximo
+                if (produtoFilter.PrecoMax.HasValue)
+                {
+                    produtos = produtos.Where(p => p.Preco <= produtoFilter.PrecoMax.Value);
+                }
+
+                //Fim dos filtros para a pesquisa básica
+
+                var resultado = await produtos.ToListAsync();
 
                 if (!produtos.Any())
                     return NotFound("Produtos não encontrados!");
 
-                return Ok(produtos);
+                return Ok(resultado);
             }
             catch (Exception)
             {
