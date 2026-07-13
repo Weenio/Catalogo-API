@@ -26,12 +26,12 @@ jobs:
 
 
     - name: Restore dependencies
-      run: dotnet restore "Catalogo API.sln"
+      run: dotnet restore "src/Catalogo API.sln"
 
 
     - name: Build
-      run: dotnet build "Catalogo API.sln"
+      run: dotnet build "src/Catalogo API.sln"
 
 
     - name: Run tests
-      run: dotnet test "Catalogo API.sln"
+      run: dotnet test "src/Catalogo API.sln"
