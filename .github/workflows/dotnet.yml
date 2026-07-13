@@ -34,4 +34,4 @@ jobs:
 
 
     - name: Run tests
-      run: dotnet test --no-build
+      run: dotnet test "Catalogo API.sln"
