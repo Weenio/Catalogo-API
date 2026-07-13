@@ -63,7 +63,8 @@ namespace Catalogo_API.Controllers
         {
             try
             {
-                return await _context.Categorias.AsNoTracking().Include(p => p.Produtos).ToListAsync();
+                var list = await _context.Categorias.AsNoTracking().Include(p => p.Produtos).ToListAsync();
+                return Ok(list);
             }
             catch (Exception)
             {
