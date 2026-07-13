@@ -4,6 +4,8 @@ API REST desenvolvida em **ASP.NET Core** utilizando **Entity Framework Core**, 
 
 O projeto consiste em um catálogo de produtos e categorias, simulando uma aplicação utilizada por uma rede fictícia de supermercados.
 
+![Build Status](https://github.com/Weenio/Catalogo-API/actions/workflows/dotnet.yml/badge.svg)
+
 ---
 
 ## 🚀 Tecnologias utilizadas
@@ -15,6 +17,7 @@ O projeto consiste em um catálogo de produtos e categorias, simulando uma aplic
 - Swagger/OpenAPI
 - LINQ
 - Async/Await
+- xUnit
 
 ---
 
