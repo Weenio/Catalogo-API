@@ -13,6 +13,8 @@ namespace Catalogo_API_tests.ControllersTests
         private readonly ProdutoController _controller;
         private readonly AppDbContext _virtualContext;
 
+        //pequena alteração para teste de pipeline
+
         public ProdutoControllerUnitTest()
         {
             //Criação do banco de dados imaginário para os testes
